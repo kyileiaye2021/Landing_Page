@@ -2310,3 +2310,16 @@ input, select, textarea {
 			}
 
 		}
+
+
+		.text-overlay {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			padding: 10px;
+			background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text readability */
+			border-radius: 10px;
+			z-index: 1;
+		}
