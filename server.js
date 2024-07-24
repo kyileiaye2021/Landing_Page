@@ -1,28 +1,26 @@
-//Import required modules
-require('dotenv').config(); //loads environment var from a .env file to process.env
-const express = require('express'); //web framework for Node.js
-const nodemailer = require('nodemailer'); //for sending emails
-const path = require('path'); // for handling and transforming files
-const bodyParser = require('body-parser');// to parse incoming request bodies
-const exp = require('constants');
+require('dotenv').config(); // Loads environment variables from .env file
+const express = require('express'); // Web framework for Node.js
+const nodemailer = require('nodemailer'); // For sending emails
+const path = require('path'); // For handling and transforming file paths
+const bodyParser = require('body-parser'); // To parse incoming request bodies
 
-//Initialize Express app
-const app = express(); //creates an express app
+// Initialize Express app
+const app = express();
 const port = process.env.PORT || 3000;
 
-//Middleware to Parse Form data
-app.use(bodyParser.urlencoded({ extended: true})); //parse form data
+// Middleware to parse form data
+app.use(bodyParser.urlencoded({ extended: true }));
 
-//Serve static files (html, css, and javascript)
-app.use('/assets',express.static(path.join(__dirname, 'assets')));
+// Serve static files (html, css, and javascript)
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
-app.use('/images',express.static(path.join(__dirname, 'images')))
-//Serve static html file
-app.get('/', (req, res) =>{
+// Serve static HTML file
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-//Setting email configuration using environment var
+// Setting email configuration using environment variables
 const emailConfig = {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -31,41 +29,39 @@ const emailConfig = {
 console.log('Email user:', emailConfig.user);
 console.log('Email pass:', emailConfig.pass);
 
-//Create transporter obj using nodemailer to send emails
+// Create transporter object using nodemailer to send emails
 const transporter = nodemailer.createTransport({
     service: 'gmail',
-    auth:{
+    auth: {
         user: emailConfig.user,
         pass: emailConfig.pass,
     },
 });
 
-//Send email using transporter
-const sentAutoReply = async (sender_name, to) => {
+// Function to send auto-reply email
+const sendAutoReply = async (senderName, to) => {
     try {
         let info = await transporter.sendMail({
             from: `"Kyi Lei Aye" <${emailConfig.user}>`,
             to: to,
             subject: 'Auto-Reply: Thanks for reaching out to me!',
-            text: `Hi ${sender_name}, This is Kyi!. Thank you for your message. I will get back to you as soon as possible!`
+            text: `Hi ${senderName}, This is Kyi! Thank you for your message. I will get back to you as soon as possible!`
         });
         console.log('Auto-reply sent: %s', info.messageId);
-    }
-    catch (error) {
-        console.error('Error sending auto-reply: ', error);
-        
+    } catch (error) {
+        console.error('Error sending auto-reply:', error);
     }
 };
 
-//handling route to request page
+// Handling route to request page
 app.post('/contact', async (req, res) => {
     const { name, email, message } = req.body;
-    console.log(`New message form ${name} (${email}): ${message}`);
-    await sentAutoReply(name, email);
+    console.log(`New message from ${name} (${email}): ${message}`);
+    await sendAutoReply(name, email);
     res.send('Thank you for your message!');
 });
 
-//Run the server
+// Run the server
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+    console.log(`Server is running on port ${port}`);
 });
