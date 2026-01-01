@@ -994,10 +994,23 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
-			.image.centered img {
+		.image.centered img {
 				margin: 0 auto;
 				width: auto;
-			}
+		}
+		.profile-container {
+			display: flex;
+			justify-content: center;
+		}
+
+		.profile-pic {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%; /* makes it a circle */
+			object-fit: cover; /* crop and fit image */
+			border: 4px solid #fff; /* optional white border */
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* optional shadow */
+		}
 
 /* List */
 
@@ -2323,3 +2336,66 @@ input, select, textarea {
 			border-radius: 10px;
 			z-index: 1;
 		}
+		/* Slide-in animations */
+		@keyframes slideInFromRight {
+		0% {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+		}
+
+		@keyframes slideInFromLeft {
+		0% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+		}
+
+		/* Apply to content box */
+		.slide-in-right {
+		animation: slideInFromRight 1s ease-out forwards;
+		}
+
+		/* Apply to images */
+		.slide-in-left {
+		animation: slideInFromLeft 1s ease-out forwards;
+		}
+
+		/* Optional: organize layout */
+		.image-column {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+		}
+
+		.content-column {
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		}
+
+		.fullscreen-row {
+		display: flex;
+		width: 100%;
+		height: 100vh;
+		}
+
+		.content.box.style2 {
+			align-self: flex-start; /* Let it only take the height it needs */
+			height: auto !important; /* Make sure it doesn't stretch */
+			max-width: 600px; /* Optional: control width */
+			padding: 2rem; /* Optional: adjust padding */
+			border-radius: 1rem; /* rounded corners, optional */
+		}
+
