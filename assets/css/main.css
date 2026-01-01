@@ -2337,36 +2337,45 @@ input, select, textarea {
 			z-index: 1;
 		}
 		/* Slide-in animations */
+		/* Keyframes */
 		@keyframes slideInFromRight {
-		0% {
-			transform: translateX(100%);
-			opacity: 0;
-		}
-		100% {
-			transform: translateX(0);
-			opacity: 1;
-		}
+			0% {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+			100% {
+				transform: translateX(0);
+				opacity: 1;
+			}
 		}
 
 		@keyframes slideInFromLeft {
-		0% {
-			transform: translateX(-100%);
+			0% {
+				transform: translateX(-100%);
+				opacity: 0;
+			}
+			100% {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		/* Base state before animation */
+		.slide-in-left,
+		.slide-in-right {
 			opacity: 0;
 		}
-		100% {
-			transform: translateX(0);
+
+		/* When in view */
+		.slide-in-left.animate {
+			animation: slideInFromLeft 1s ease-out forwards;
+			margin-top: -250px;
 			opacity: 1;
 		}
-		}
 
-		/* Apply to content box */
-		.slide-in-right {
-		animation: slideInFromRight 1s ease-out forwards;
-		}
-
-		/* Apply to images */
-		.slide-in-left {
-		animation: slideInFromLeft 1s ease-out forwards;
+		.slide-in-right.animate {
+			animation: slideInFromRight 1s ease-out forwards;
+			opacity: 1;
 		}
 
 		/* Optional: organize layout */
@@ -2397,5 +2406,34 @@ input, select, textarea {
 			max-width: 600px; /* Optional: control width */
 			padding: 2rem; /* Optional: adjust padding */
 			border-radius: 1rem; /* rounded corners, optional */
+			margin-top: 5rem;
 		}
+
+		/* ===== Section: Research (ID: three) ===== */
+		.research-section {
+			background: #f8f8f8;
+			padding: 60px 20px;
+		}
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		.section-title {
+			text-align: center;
+			font-size: 2.5rem;
+			margin-bottom: 40px;
+		}
+
+		ul.custom-bullets {
+		list-style-type: disc;
+		padding-left: 1.5em;
+		}
+
+
+
+
+
+		
+
 
