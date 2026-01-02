@@ -2433,6 +2433,19 @@ input, select, textarea {
 		.center-links{
 			text-align: center;
 		}
+		.experience-item {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.experience-item img {
+			width: 48px;
+			height: 48px;
+			object-fit: contain;
+		}
+
 
 
 
