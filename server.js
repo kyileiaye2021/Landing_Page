@@ -11,6 +11,9 @@ const port = process.env.PORT || 3000;
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Serve ALL static files in this directory (html, css, js, pdf, etc.)
+app.use(express.static(__dirname));
+
 // Serve static files (html, css, and javascript)
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
