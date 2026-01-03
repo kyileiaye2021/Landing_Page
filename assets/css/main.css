@@ -2282,6 +2282,10 @@ input, select, textarea {
 		background-position: top left, center center;
 	}
 
+	#two .content{
+		margin-top: 0%;
+	}
+
 /* Contact */
 
 	#contact {
@@ -2438,12 +2442,48 @@ input, select, textarea {
 			align-items: center;
 			gap: 1rem;
 			margin-bottom: 1.5rem;
+			cursor: pointer;
 		}
 
 		.experience-item img {
 			width: 60px;
 			height: 58px;
 			object-fit: contain;
+		}
+
+		.experience-details {
+
+			position: absolute;
+			top: 40%;
+			right: -500px;
+			transform: translateY(-50%);
+			width: 700px;
+
+			background: #fff;
+			color: #000;
+			padding: 20px;
+			border-radius: 12px;
+			box-shadow: 0 0 30px rgba(0,0,0,0.3);
+
+			opacity: 0;
+			pointer-events: none;     /*cannot click when hidden*/
+
+			transition:
+				right 0.45s ease,
+				opacity 0.25s ease;
+			z-index: 1000;
+		}
+
+		.experience-details.active {
+			right: 40px;
+			opacity: 1;
+			pointer-events: auto;
+
+		}
+
+		.experience-details ul {
+		list-style: disc;
+		padding-left: 20px;
 		}
 
 		/* Featured section background */
@@ -2464,8 +2504,8 @@ input, select, textarea {
 
 
 		#featured .content {
-		max-width: 1700px;
-		margin: 0 auto;
+			max-width: 1700px;
+			margin: 0 auto;
 		}
 
 		/* Remove underline from entire featured card */

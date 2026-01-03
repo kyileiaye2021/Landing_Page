@@ -77,6 +77,15 @@
 				<div class="content box style2">
 					
 						<h2>Experience</h2>
+
+						<div class="experience-item">
+							<img src="images/Stanford logo.jpg" alt="Stanford Medicine logo" />
+							<div>
+								<b>Stanford University School of Medicine</b><br>
+								<small>AI/ML Researcher | Computational Pathology </small>
+							</div>
+						</div>
+
 						<div class="experience-item">
 							<img src="images/cadence_logo.png" alt="Cadence Design Systems logo" />
 							<div>
@@ -84,12 +93,12 @@
 								<small>Machine Learning Engineer Fellow</small>
 							</div>
 						</div>
-						
+
 						<div class="experience-item">
 							<img src="images/Stanford logo.jpg" alt="Stanford Medicine logo" />
 							<div>
 								<b>Stanford University School of Medicine</b><br>
-								<small>AI/ML Researcher</small>
+								<small>AI/ML Research Intern | Computational Pathology </small>
 							</div>
 						</div>
 						
@@ -142,6 +151,49 @@
 						</div>
 					
 				</div>
+
+				<!--Experience detail-->
+				<div class="experience-details" id="stanford-research-details">
+					<button onclick="this.parentElement.classList.remove('active')" style="float:right;">X</button>
+
+						<h3 style="display:inline;">Stanford University School of Medicine </h3>
+						<small style="margin-left: 10px;">| January 2025 - Present</small>
+						<ul>
+							<li>Contributing to a non-invasive cancer diagnosis approach in Winetraub lab.</li>
+							<li>Developing a vision-language model to detect cancer in skin Optical Coherence Tomography grayscale images (rare microscopy images)</li>
+							
+						</ul>
+				</div>
+
+				<div class="experience-details" id="cadence-details">
+					<button onclick="this.parentElement.classList.remove('active')" style="float:right;">X</button>
+
+						<h3 style="display:inline;">Cadence Design Systems </h3>
+						<small style="margin-left: 10px;">| Sept 2025 - Dec 2025</small>
+						<ul>
+							<li>Cleaned and preprocessed <b>48M+</b> Amazon product review data using <b>NLTK</b> and <b>Pandas</b>, preparing data for model training.</li>
+							<li>Fine-tuned a <b>BERT-Base Cased</b> model on cleaned data with the <b>Hugging Face Transformers</b> for sentiment analysis, improving <b>~87%</b>accuracy in classifying reviews into positive, neutral, and negative categories to extract actionable insights.</li>
+							<li>Developed an Aspect-Based Sentiment Analysis pipeline with <b>PyABSA</b> to extract key product features from <b>~51K</b> reviews and evaluate sentiment at the feature level, informing which features to preserve or redesign.</li>
+							<li>Create a comprehensive dashboard on <b>Streamlit</b> that transforms unstructured customer review feedback into clear, data-driven product improvement roadmaps.</li>
+						</ul>
+				</div>
+
+				<div class="experience-details" id="stanford-ccop-details">
+					<button onclick="this.parentElement.classList.remove('active')" style="float:right;">X</button>
+
+						<h3 style="display:inline;">Stanford University School of Medicine | CCOP </h3>
+						<small style="margin-left: 10px;">Sept 2025 - Dec 2025</small>
+						<ul>
+
+							<li>Fine-tuned a <b>BEiT-BERT</b> based pathology vision-language model on <b>~6K</b> image pairs with <b>Pytorch</b> and <b>knowledge distillation</b>, increasing model accuracy rate by <b>72%</b> in tissue classification in grayscale cancer microscopy image domain.</li>
+							<li>Implemented a <b>UNI</b> self-supervised image encoder pipeline in <b>TensorFlow</b> with a cosine similarity technique for pixel-level 
+								cancer classification, achieving <b>70%</b> precision in identifying cancer areas in pathology images.</li>
+							<li>Analyzed skin pathology images using Open AI, Claude AI Sonnet, Janus Pro 7B (DeepSeek AI Vision Model), CONCH, and MUSK pathology vision-language models, achieving <b>~85%</b> accuracy in recognizing skin tissues in non-invasive virtual biopsy pathology images.</li>
+							<li>Led <b>10+</b> new research interns in Journal Club and guided the discussion of cGAN-based image-to-image translation research models, sparking greater interest in AI/ML-driven scientific applications.</li>
+						</ul>
+				</div>
+
+
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
 		
@@ -326,6 +378,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!--making the text boxes slide in the who i am page. (but still slide only after refresh now)-->
 			<script>
 				document.addEventListener("DOMContentLoaded", () => {
 					setTimeout(() => {
@@ -352,6 +406,23 @@
 					
 			</script>
 
+			<!--making the experience details slide in-->
+			<script>
+				document.querySelectorAll('.experience-item').forEach((item, index) => {
+					const ids = ["cadence-details"];
+					item.addEventListener('click', () => {
+						document.querySelectorAll('.experience-details').forEach((panel, i) => {
+							if (i == index){
+								panel.classList.toggle('active');
+							}
+							else{
+								panel.classList.remove('active');
+							}
+						});
+					});
+				});
+				
+			</script>
 
 
 	</body>
