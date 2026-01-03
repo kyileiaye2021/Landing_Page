@@ -2454,7 +2454,7 @@ input, select, textarea {
 		.experience-details {
 
 			position: absolute;
-			top: 40%;
+			top: 50%;
 			right: -500px;
 			transform: translateY(-50%);
 			width: 700px;
@@ -2556,6 +2556,18 @@ input, select, textarea {
 
 		.featured-stack{
 			max-width: 1700px;
+		}
+
+		.see-more {
+			font-size: 0.9rem;
+			color: #00bfff;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.see-more:hover {
+			color: #ffffff;
+			text-shadow: 0 0 5px rgba(0, 191, 255, 0.8);
 		}
 
 
