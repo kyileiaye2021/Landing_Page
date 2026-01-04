@@ -682,7 +682,15 @@ AI-powered chatbot, improving response relevancy and accuracy rate by <b>35%</b>
 			</script>
 
 			<!--Project pop ups-->
+			
 			<script>
+			// IMMEDIATELY disable preloader - before anything else
+			(function() {
+				document.body.classList.remove('is-preload');
+				document.body.classList.remove('is-loading');
+			})();
+
+
 			function openProject(id) {
 				document.getElementById('project-' + id).style.display = 'flex';
 			}
@@ -690,10 +698,55 @@ AI-powered chatbot, improving response relevancy and accuracy rate by <b>35%</b>
 			function closeProject(id) {
 				document.getElementById('project-' + id).style.display = 'none';
 			}
+			
+			// Close popup when clicking outside the popup-box
+			document.addEventListener('DOMContentLoaded', function() {
+				// Double-check preloader is removed
+				document.body.classList.remove('is-preload');
+				document.body.classList.remove('is-loading');
+				
+				document.querySelectorAll('.project-popup').forEach(popup => {
+					popup.addEventListener('click', function(e) {
+						// Only close if clicking the overlay itself, not the popup-box
+						if (e.target === popup) {
+							popup.style.display = 'none';
+						}
+					});
+				});
+
+				// Prevent clicks inside popup-box from bubbling to popup overlay
+				document.querySelectorAll('.popup-box').forEach(box => {
+					box.addEventListener('click', function(e) {
+						e.stopPropagation();
+					});
+				});
+
+				// Make sure all GitHub links work - DIRECT APPROACH
+				document.querySelectorAll('.popup-box a[href*="github"]').forEach(link => {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						e.stopPropagation();
+						
+						// Directly open the URL
+						const url = this.getAttribute('href');
+						console.log('Opening GitHub URL:', url); // Debug log
+						
+						// Try multiple methods to ensure it opens
+						const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+						if (!newWindow) {
+							// Fallback: try location
+							window.location.href = url;
+						}
+					});
+				});
+			});
+
+			// Continuous check to prevent preloader from ever showing
+			setInterval(function() {
+				document.body.classList.remove('is-preload');
+				document.body.classList.remove('is-loading');
+			}, 100);
 			</script>
-
-
-
 	</body>
 </html>
 

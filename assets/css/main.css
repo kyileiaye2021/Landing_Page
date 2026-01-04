@@ -2658,3 +2658,51 @@ input, select, textarea {
 			font-size: 1.8em;
 			cursor: pointer;
 		}
+
+	/* 1. Prevent the loading overlays from blocking clicks after they fade out */
+			body:before,
+			body:after {
+				pointer-events: none !important;
+				display: none !important; /* Force hide the preloader elements */
+			}
+
+			/* 2. Ensure the popup and its contents are at the very front */
+			.project-popup {
+				display: none; 
+				position: fixed;
+				z-index: 200000; /* Higher than the body:before z-index */
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.7);
+				justify-content: center;
+				align-items: center;
+				pointer-events: auto; /* Allow clicks on the overlay itself */
+			}
+
+			.popup-box {
+				position: relative;
+				z-index: 200001; /* Ensure the box is above the popup overlay */
+				background-color: ivory;
+				padding: 2rem;
+				border-radius: 12px;
+				color: black;
+				pointer-events: auto !important; /* Explicitly allow clicks here */
+			}
+
+			/* 3. Specifically target all interactive elements in popup */
+			.popup-box a, 
+			.popup-box .github-link,
+			.popup-box button,
+			.popup-box .close-btn {
+				position: relative;
+				z-index: 200002;
+				pointer-events: auto !important;
+				cursor: pointer !important;
+			}
+
+			/* 4. Ensure links are styled and clickable */
+			.popup-box a:hover {
+				opacity: 0.8;
+			}
