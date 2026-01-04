@@ -356,129 +356,219 @@ AI-powered chatbot, improving response relevancy and accuracy rate by <b>35%</b>
 						<div class="gallery">
 
 							<!-- amazon_review_sentiment_analysis -->
-							<article class="from-left project-card">
-
-								<a href="https://github.com/BTT-Cadence-Design-Systems-2A/AI-Studio-Project.git" target="_blank">
+							<article class="from-left project-card" onclick="openProject('amazon-review-project')">
 									<img src="images/amazon_review_sentiment_analysis.png" alt="Amazon Review Sentiment Analysis" class="image fit" />
-								</a>
 								<div class="project-content">
 									<h3>Amazon Review Sentiment Analysis</h3>
 									<small><i>(NLTK, Pandas, PyABSA, Streamlit, Hugging Face Transformers)</i></small>
-									<p class="project-description">
-										A product feedback & recommendation AI system dashboard using Sentiment analysis to make a data-driven decision for continuous product innovation and customer satisfaction. It'll help transform unstructured customer feedback into clear, data-backed product improvement roadmaps for product teams.
-									</p>
-
 								</div>
 							</article>
+
+							<div id="project-amazon-review-project" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('amazon-review-project')">&times;</span>
+
+									<h3>Amazon Review Sentiment Analysis</h3>
+									<p>
+									A product feedback AI system dashboard using Sentiment analysis to transform unstructured customer feedback into clear, data-driven insights for continuous product innovation and customer satisfaction. 
+									</p>
+
+									<a href="https://github.com/BTT-Cadence-Design-Systems-2A/AI-Studio-Project.git"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
 							
 							<!-- musk teacher student model -->
-							<article class="from-right project-card">
-
-								<a href="https://github.com/kyileiaye2021/Teacher-Student-Network_MUSK-Pathology-Model.git" target="_blank">
-									<img src="images/MUSK_architecture.png" alt="MUSK Teacher Student Model" class="image fit" />
-								</a>
+							<article class="from-right project-card" onclick="openProject('musk')">
+								<img src="images/MUSK_architecture.png" alt="MUSK Cross-Modal Knowledge Distillation" class="image fit" />
 								<div class="project-content">
-									<h3>MUSK Cross-modal Distillation</h3>
+									<h3>MUSK Cross-Modal Knowledge Distillation</h3>
 									<small><i>(Pytorch, Albumentation, Transformers, Knowledge Distillation)</i></small>
-									<p class="project-description">
-										A product feedback & recommendation AI system dashboard using Sentiment analysis to make a data-driven decision for continuous product innovation and customer satisfaction. It'll help transform unstructured customer feedback into clear, data-backed product improvement roadmaps for product teams.
-									</p>
-
 								</div>
 							</article>
 
+							<div id="project-musk" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('musk')">&times;</span>
+									<h3>MUSK Cross-Modal Knowledge Distillation</h3>
+									<p>
+									Using a knowledge distillation technique, image domain gap between color-stained pathology images and grayscale microscopy images is closed to develop
+									a vision-language foundation model for grayscale microscopy images, advancing a non-invasive cancer diagnosis which uses such grayscale images.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/Teacher-Student-Network_MUSK-Pathology-Model.git"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
+
+
 							<!-- insight bot -->
-							<article class="from-left project-card">
-								<a href="https://github.com/kyileiaye2021/insightbot.git" target="_blank">
-									<img src="images/insight bot.jpg" alt="Insight Bot" class="image fit" />
-								</a>
+							<article class="from-left project-card" onclick="openProject('insight-bot')">
+								<img src="images/insight bot.jpg" alt="Insight Bot" class="image fit" />
 								<div class="project-content">
 									<h3>Insight Bot</h3>
 									<small><i>(Typescript, Python, NextJS, Anthropic API, Pinecone, Retrieval Augmented Generation)</i></small>
-									<p class="project-description">
-										A chatbot that delivers curated insights from academic PDFs and reports using OpenAI + Pinecone + LangChain. Optimized for research productivity and fast answers.
-									</p>
-
 								</div>
 							</article>
 
+							<div id="project-insight-bot" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('insight-bot')">&times;</span>
+
+									<h3>Insight Bot</h3>
+									<p>
+									An intelligent study tool powered by Retrieval Augmented Generation that helps students to build effective study habits with a personalized study planner assistant and reach learning goals.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/insightbot.git"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
+
+
 							<!-- personal finance Tracker -->
-							<article class="from-right project-card">
-								<a href="https://github.com/kyileiaye2021/Personal_Finance_Tracker" target="_blank">
-									<img src="images/personal_finance_tracker.png" alt="Personal Finance Tracker" class="image fit" />
-								</a>
+							<!--project card-->
+							<article class="from-right project-card" onclick="openProject('finance')">
+								<img src="images/personal_finance_tracker.png" alt="Personal Finance Tracker" class="image fit" />
+								
 								<div class="project-content">
 									<h3>Personal Finance Tracker</h3>
 									<small><i>(Python, Flask, OpenAI API, Pytest, PostgreSQL)</i></small>
-									<p class="project-description">
-										A webapp that delivers curated insights from academic PDFs and reports using OpenAI + Pinecone + LangChain. Optimized for research productivity and fast answers.
-									</p>
-
 								</div>
 							</article>
 
+							<!--project description popup-->
+							<div id="project-finance" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('finance')">&times;</span>
+
+									<h3>Personal Finance Tracker</h3>
+									<p>
+									A full‑stack finance web app that tracks expenses, set budgets, visualizes spending patterns,
+									and integrates OpenAI to generate personalized financial insights.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/Personal_Finance_Tracker.git"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
+
 							<!-- inventory management app  -->
-							<article class="from-left project-card">
-								<a href="https://github.com/kyileiaye2021/Inventory_Management_App.git" target="_blank">
-									<img src="images/inventory_app.png" alt="Inventory Management App" class="image fit" />
-								</a>
+							<article class="from-left project-card" onclick="openProject('inventory')">
+								<img src="images/inventory_app.png" alt="Inventory Management App" class="image fit" />
 								<div class="project-content">
 									<h3>Inventory Management App</h3>
 									<small><i>(Tensorflow.js, Firebase, Langchain, Retrieval Augmented Generation)</i></small>
-									<p class="project-description">
-										A webapp that delivers curated insights from academic PDFs and reports using OpenAI + Pinecone + LangChain. Optimized for research productivity and fast answers.
-									</p>
-
 								</div>
 							</article>
+
+							<div id="project-inventory" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('inventory')">&times;</span>
+
+									<h3>Inventory Management App</h3>
+									<p>
+									An inventory app that automates item logging via real-time object detection and enhances decision-making through an AI-powered RAG chatbot, reducing manual entry by 20% and improving response accuracy by 35%.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/Inventory_Management_App.git"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
 
 
 							<!-- noteify me  -->
-							<article class="from-right project-card">
-
-								<a href="https://github.com/kyileiaye2021/NoteifyMe" target="_blank">
-									<img src="images/noteify_me.png" alt="Noteify Me" class="image fit" />
-								</a>
+							<article class="from-right project-card" onclick="openProject('noteify')">
+								<img src="images/noteify_me.png" alt="Noteify Me" class="image fit" />
 								<div class="project-content">
 									<h3>NoteifyMe</h3>
-									<small><i>(HTML, CSS, Javascript, OpenAI API)</i></small>
-									<p class="project-description">
-										A webapp for students. Optimized for research productivity and fast answers.
-									</p>
-
+									<small><i>(HTML, CSS, Javascript, Discord API)</i></small>
 								</div>
 							</article>
 
+							<div id="project-noteify" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('noteify')">&times;</span>
+
+									<h3>NoteifyMe</h3>
+									<p>
+									A customizable Discord bot that integrates with class servers to send automated reminders for deadlines, notes, and course updates, helping students stay organized and never miss important information.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/NoteifyMe"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
+
 							<!-- handwritten_digits recognition  -->
-							<article class="from-left project-card">
-								<a href="https://github.com/kyileiaye2021/Handwritten_Digit_Recognition_using_MNIST_Dataset" target="_blank">
-									<img src="images/handwritten_digits.png.webp" alt="Handwritten digit recognition" class="image fit" />
-								</a>
+							<article class="from-left project-card" onclick="openProject('handwritten-digit')">
+								<img src="images/handwritten_digits.png.webp" alt="Handwritten digit recognition" class="image fit" />
 								<div class="project-content">
 									<h3>Handwritten Digit Recognition</h3>
 									<small><i>(Python, TensorFlow, Neural Network)</i></small>
-									<p class="project-description">
-										A webapp for students. Optimized for research productivity and fast answers.
-									</p>
-
 								</div>
 							</article>
 
+							<div id="project-handwritten-digit" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('handwritten-digit')">&times;</span>
+
+									<h3>Handwritten Digit Recognition</h3>
+									<p>
+									A neural network using TensorFlow and Keras on the MNIST dataset to accurately recognize handwritten digits (0–9) from 28×28 grayscale images.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/Handwritten_Digit_Recognition_using_MNIST_Dataset"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
+
 							<!-- breast cancer prediction  -->
-							<article class="from-right project-card">
-								<a href="https://github.com/kyileiaye2021/Breast_Cancer_Classification_Prediction-Logistic_Regression.git" target="_blank">
-									<img src="images/breast_cancer_classification.jpg" alt="breast cancer prediction" class="image fit" />
-								</a>
+							<article class="from-right project-card" onclick="openProject('breast-cancer-prediction')">
+								<img src="images/breast_cancer_classification.jpg" alt="breast cancer prediction" class="image fit" />
 								<div class="project-content">
 									<h3>Breast Cancer Prediction</h3>
 									<small><i>(Python, Losgistic Regression)</i></small>
-									<p class="project-description">
-										A webapp for students. Optimized for research productivity and fast answers.
-									</p>
-
 								</div>
 							</article>
 							
+							<div id="project-breast-cancer-prediction" class="project-popup">
+								<div class="popup-box">
+									<span class="close-btn" onclick="closeProject('breast-cancer-prediction')">&times;</span>
+
+									<h3>Breast Cancer Prediction</h3>
+									<p>
+										A logistic regression classifier to predict breast cancer diagnosis from medical imaging features, achieving 95% accuracy.
+									</p>
+
+									<a href="https://github.com/kyileiaye2021/Breast_Cancer_Classification_Prediction-Logistic_Regression.git"
+									target="_blank"
+									class="github-link">
+									View on GitHub →
+									</a>
+								</div>
+							</div>
 						
 						</div>
 
@@ -590,6 +680,18 @@ AI-powered chatbot, improving response relevancy and accuracy rate by <b>35%</b>
 				});
 				
 			</script>
+
+			<!--Project pop ups-->
+			<script>
+			function openProject(id) {
+				document.getElementById('project-' + id).style.display = 'flex';
+			}
+
+			function closeProject(id) {
+				document.getElementById('project-' + id).style.display = 'none';
+			}
+			</script>
+
 
 
 	</body>
